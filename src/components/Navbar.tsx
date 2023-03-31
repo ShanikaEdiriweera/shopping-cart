@@ -18,39 +18,36 @@ export function Navbar() {
             About
           </Nav.Link>
         </Nav>
-        <Button
-          style={{ width: "3rem", height: "3rem", position: "relative" }}
-          variant="outline-primary"
-          className="rounded-circle"
-          onClick={openCart}
-        >
-          <svg
-            version="1.1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            viewBox="0 0 122.9 107.5"
+        {cartQuantity > 0 && (
+          <Button
+            style={{ width: "3rem", height: "3rem", position: "relative" }}
+            variant="outline-primary"
+            className="rounded-circle"
+            onClick={openCart}
           >
-            <g>
-              <path d="M3.9,7.9C1.8,7.9,0,6.1,0,3.9C0,1.8,1.8,0,3.9,0h10.2c0.1,0,0.3,0,0.4,0c3.6,0.1,6.8,0.8,9.5,2.5c3,1.9,5.2,4.8,6.4,9.1 c0,0.1,0,0.2,0.1,0.3l1,4H119c2.2,0,3.9,1.8,3.9,3.9c0,0.4-0.1,0.8-0.2,1.2l-10.2,41.1c-0.4,1.8-2,3-3.8,3v0H44.7 c1.4,5.2,2.8,8,4.7,9.3c2.3,1.5,6.3,1.6,13,1.5h0.1v0h45.2c2.2,0,3.9,1.8,3.9,3.9c0,2.2-1.8,3.9-3.9,3.9H62.5v0 c-8.3,0.1-13.4-0.1-17.5-2.8c-4.2-2.8-6.4-7.6-8.6-16.3l0,0L23,13.9c0-0.1,0-0.1-0.1-0.2c-0.6-2.2-1.6-3.7-3-4.5 c-1.4-0.9-3.3-1.3-5.5-1.3c-0.1,0-0.2,0-0.3,0H3.9L3.9,7.9z M96,88.3c5.3,0,9.6,4.3,9.6,9.6c0,5.3-4.3,9.6-9.6,9.6 c-5.3,0-9.6-4.3-9.6-9.6C86.4,92.6,90.7,88.3,96,88.3L96,88.3z M53.9,88.3c5.3,0,9.6,4.3,9.6,9.6c0,5.3-4.3,9.6-9.6,9.6 c-5.3,0-9.6-4.3-9.6-9.6C44.3,92.6,48.6,88.3,53.9,88.3L53.9,88.3z M33.7,23.7l8.9,33.5h63.1l8.3-33.5H33.7L33.7,23.7z" />
-            </g>
-          </svg>
-          <div
-            className="rounded-circle bg-danger d-flex justify-content-center align-content-center"
-            style={{
-              color: "white",
-              width: "1.5rem",
-              height: "1.5rem",
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-              transform: "translate(25%, 25%)"
-            }}
-          >
-            {cartQuantity}
-          </div>
-        </Button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              fill="currentColor"
+            >
+              <path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z" />
+            </svg>
+            <div
+              className="rounded-circle bg-danger d-flex justify-content-center align-content-center"
+              style={{
+                color: "white",
+                width: "1.5rem",
+                height: "1.5rem",
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                transform: "translate(25%, 25%)",
+              }}
+            >
+              {cartQuantity}
+            </div>
+          </Button>
+        )}
       </Container>
     </NavbarBs>
   );
